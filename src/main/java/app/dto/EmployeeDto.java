@@ -46,5 +46,5 @@ public class EmployeeDto {
     public void setDepartmentId(Long departmentId) {
         this.departmentId = departmentId;
     }
-    
+
 }

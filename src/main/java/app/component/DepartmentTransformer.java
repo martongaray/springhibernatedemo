@@ -17,6 +17,7 @@ public class DepartmentTransformer {
         department.getEmployees().forEach(employee -> departmentDto.getEmployeeIds().add(employee.getId()));
         return departmentDto;
     }
+
     public List<DepartmentDto> transform(List<Department> departments) {
         List<DepartmentDto> departmentDtos = new ArrayList<>();
         departments.forEach(department -> departmentDtos.add(transform(department)));

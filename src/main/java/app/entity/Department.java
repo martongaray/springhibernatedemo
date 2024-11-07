@@ -28,7 +28,8 @@ public class Department {
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Employee> employees = new ArrayList<>();
 
-    public Department() {}
+    public Department() {
+    }
 
     public Department(String name) {
         this.name = name;

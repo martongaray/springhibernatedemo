@@ -31,7 +31,8 @@ public class IntegrationTest {
     @Test
     public void insertDepartment() {
         DepartmentDto itDepartment = new DepartmentDto("IT");
-        ResponseEntity<DepartmentDto> response = restTemplate.postForEntity("/departments", itDepartment, DepartmentDto.class);
+        ResponseEntity<DepartmentDto> response = restTemplate.postForEntity("/departments", itDepartment,
+                DepartmentDto.class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(itDepartment.getDepartmentName(), response.getBody().getDepartmentName());
         assertNotNull(response.getBody().getDepartmentId());
@@ -42,7 +43,8 @@ public class IntegrationTest {
         DepartmentDto itDepartment = new DepartmentDto("IT");
         EmployeeDto itEmployee = new EmployeeDto("Alice", "IT");
         restTemplate.postForEntity("/departments", itDepartment, DepartmentDto.class);
-        ResponseEntity<EmployeeDto> response = restTemplate.postForEntity("/employees", itEmployee, EmployeeDto.class);
+        ResponseEntity<EmployeeDto> response = restTemplate.postForEntity("/employees", itEmployee,
+                EmployeeDto.class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(itEmployee.getEmployeeName(), response.getBody().getEmployeeName());
         assertEquals(itEmployee.getDepartmentName(), response.getBody().getDepartmentName());
@@ -77,12 +79,14 @@ public class IntegrationTest {
         EmployeeDto itEmployee3 = new EmployeeDto("Carol", "IT");
         EmployeeDto hrEmployee1 = new EmployeeDto("Dave", "HR");
         EmployeeDto hrEmployee2 = new EmployeeDto("Fred", "HR");
-        ResponseEntity<DepartmentDto> departmentResponse = restTemplate.postForEntity("/departments", itDepartment, DepartmentDto.class);
+        ResponseEntity<DepartmentDto> departmentResponse = restTemplate.postForEntity("/departments", itDepartment,
+                DepartmentDto.class);
         assertEquals(HttpStatus.OK, departmentResponse.getStatusCode());
         departmentResponse = restTemplate.postForEntity("/departments", hrDepartment, DepartmentDto.class);
         assertEquals(HttpStatus.OK, departmentResponse.getStatusCode());
 
-        ResponseEntity<EmployeeDto> employeeResponse = restTemplate.postForEntity("/employees", itEmployee1, EmployeeDto.class);
+        ResponseEntity<EmployeeDto> employeeResponse = restTemplate.postForEntity("/employees", itEmployee1,
+                EmployeeDto.class);
         assertEquals(HttpStatus.OK, employeeResponse.getStatusCode());
         employeeResponse = restTemplate.postForEntity("/employees", itEmployee2, EmployeeDto.class);
         assertEquals(HttpStatus.OK, employeeResponse.getStatusCode());

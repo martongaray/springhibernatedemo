@@ -26,7 +26,6 @@ public class DepartmentService {
         department.setName(departmentDto.getDepartmentName());
         Department departmentResult = departmentRepository.save(department);
         return departmentTransformer.transform(departmentResult);
-
     }
 
     public List<DepartmentDto> getAllDepartments() {

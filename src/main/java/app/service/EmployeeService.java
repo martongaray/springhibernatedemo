@@ -29,7 +29,8 @@ public class EmployeeService {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             entityManager.getTransaction().begin();
-            TypedQuery<Department> query = entityManager.createQuery("SELECT d FROM Department d WHERE d.name = :name", Department.class);
+            TypedQuery<Department> query = entityManager.createQuery
+                    ("SELECT d FROM Department d WHERE d.name = :name", Department.class);
             query.setParameter("name", departmentName);
             Department department = query.getSingleResult();
             employees = department.getEmployees();
@@ -44,7 +45,8 @@ public class EmployeeService {
         Employee employee;
         try {
             entityManager.getTransaction().begin();
-            TypedQuery<Employee> query = entityManager.createQuery("SELECT e FROM Employee e WHERE e.id = :employeeId", Employee.class);
+            TypedQuery<Employee> query = entityManager.createQuery
+                    ("SELECT e FROM Employee e WHERE e.id = :employeeId", Employee.class);
             query.setParameter("employeeId", employeeId);
             employee = query.getSingleResult();
         } catch (NoResultException e) {
@@ -71,7 +73,8 @@ public class EmployeeService {
     public EmployeeDto saveEmployee(EmployeeDto employeeDto) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
-            TypedQuery<Department> query = entityManager.createQuery("SELECT d FROM Department d WHERE d.name = :name", Department.class);
+            TypedQuery<Department> query = entityManager.createQuery
+                    ("SELECT d FROM Department d WHERE d.name = :name", Department.class);
             query.setParameter("name", employeeDto.getDepartmentName());
             Department department = query.getSingleResult();
             Employee employee = new Employee();
