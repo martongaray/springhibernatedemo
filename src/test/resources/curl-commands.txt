@@ -1,0 +1,15 @@
+curl -X POST http://localhost:8080/departments -H "Content-Type: application/json" -d '{"departmentName": "IT"}'
+
+curl -X POST http://localhost:8080/employees -H "Content-Type: application/json" -d '{"employeeName": "Bob", "departmentName":"IT"}'
+
+curl "http://localhost:8080/employees?departmentName=IT"
+
+curl "http://localhost:8080/employees/1"
+
+curl "http://localhost:8080/employees/all"
+
+curl "http://localhost:8080/departments/all"
+
+
+
+
