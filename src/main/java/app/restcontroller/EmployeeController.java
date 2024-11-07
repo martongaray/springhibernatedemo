@@ -39,9 +39,9 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> postEmployee(@RequestBody EmployeeDto employeeDto) {
+    public ResponseEntity<Object> createEmployee(@RequestBody EmployeeDto employeeDto) {
         try {
-            return ResponseEntity.ok(employeeService.saveEmployee(employeeDto));
+            return ResponseEntity.ok(employeeService.createEmployee(employeeDto));
         } catch (NoResultException e) {
             return new ResponseEntity<>("Attempting to insert an employee without an existing department.",
                     HttpStatus.BAD_REQUEST);

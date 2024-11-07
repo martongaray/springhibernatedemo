@@ -70,7 +70,7 @@ public class EmployeeService {
         return employeeTransformer.transform(employees);
     }
 
-    public EmployeeDto saveEmployee(EmployeeDto employeeDto) {
+    public EmployeeDto createEmployee(EmployeeDto employeeDto) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             TypedQuery<Department> query = entityManager.createQuery

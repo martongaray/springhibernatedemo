@@ -21,7 +21,7 @@ public class DepartmentService {
     @Autowired
     private DepartmentTransformer departmentTransformer;
 
-    public DepartmentDto saveDepartment(DepartmentDto departmentDto) {
+    public DepartmentDto createDepartment(DepartmentDto departmentDto) {
         Department department = new Department();
         department.setName(departmentDto.getDepartmentName());
         Department departmentResult = departmentRepository.save(department);

@@ -25,7 +25,7 @@ public class DepartmentController {
     @PostMapping
     public ResponseEntity<Object> createDepartment(@RequestBody DepartmentDto departmentDto) {
         try {
-            return ResponseEntity.ok(departmentService.saveDepartment(departmentDto));
+            return ResponseEntity.ok(departmentService.createDepartment(departmentDto));
         } catch (DataIntegrityViolationException e) {
             return new ResponseEntity<>("Attempting to insert a duplicate department.", HttpStatus.BAD_REQUEST);
         }
