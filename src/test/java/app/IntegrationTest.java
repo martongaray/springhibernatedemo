@@ -93,7 +93,7 @@ public class IntegrationTest {
         employeeResponse = restTemplate.postForEntity("/employees", hrEmployee2, EmployeeDto.class);
         assertEquals(HttpStatus.OK, employeeResponse.getStatusCode());
 
-        ResponseEntity<List<DepartmentDto>> departments  = restTemplate.exchange("/departments/all",
+        ResponseEntity<List<DepartmentDto>> departments  = restTemplate.exchange("/departments/",
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<List<DepartmentDto>>(){});

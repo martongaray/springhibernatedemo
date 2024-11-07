@@ -33,7 +33,7 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.getEmployee(employeeId));
     }
 
-    @GetMapping("/all")
+    @GetMapping("/")
     public ResponseEntity<List<EmployeeDto>> getAllEmployees() {
         return ResponseEntity.ok(employeeService.getAllEmployees());
     }
